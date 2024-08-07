@@ -8,8 +8,10 @@ lvgl的控件遵循的是面向对象编程，几乎每一个控件都是从元�
 ## lv_label_set_text(lv_obj_t* obj, char* string);
 >该函数是一个常见的设置文本的函数，将传入该函数的类转化为文本类型
 >使用示例
-```lv_obj_t* text = lv_label_create(lv_scr_act());
- lv_label_set_text(text, "Hello, world!");```
+```
+lv_obj_t* text = lv_label_create(lv_scr_act());
+lv_label_set_text(text, "Hello, world!");
+```
 
 ![图片](https://github.com/user-attachments/assets/562e1faa-33d5-41ea-9e29-eefc230869e7)
 
