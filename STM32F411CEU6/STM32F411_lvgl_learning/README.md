@@ -42,6 +42,7 @@ lv_obj_align(label_bottom, LV_ALIGN_CENTER, 0, 0);
 >当文本过长时可以采用这个函数调整文本
 >一共有5种模式
 ![图片](https://github.com/user-attachments/assets/97afe5ff-6901-4955-98a9-3f0a95e6f740)
+>需要注意的是要设置标签长度来触发滚动，不然可能会变成滑条的形式，让你能通过拖拽显示所有的内容
 
 ## lv_label_set_recolor(lv_obj_t * obj, true);
 >开启文本颜色设置
