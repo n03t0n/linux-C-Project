@@ -67,18 +67,21 @@ lv_label_set_text(label01, "#0000ff Re-color# #ff00ff text# #ff0000 of a# label.
     lv_obj_center(arc); // 将弧形对象居中
     lv_obj_set_size(arc, 100, 100); // 设置弧形滑块的宽度和高度
 
-    lv_obj_set_event_cb(arc, arc_event_handler); // 注册回调函数，常用的事件类型一般是值的变化和点击
+    lv_obj_set_event_cb(arc, arc_event_handler, LV_EVENT_VALUE_CHANGED, NULL); // 注册回调函数，常用的事件类型一般是值的变化和点击
+    lv_obj_set_event_cb(arc, arc_event_handler, LV_EVENT_CLICKED, NULL);
 ```
 ```C
     // 回调函数
-    static void arc_event_handler(lv_obj_t * obj, lv_event_t event)
-    {
-    	if (event == LV_EVENT_CLICKED) {
-    		printf("arc Clicked\n");
-    	}
-    	else if (event == LV_EVENT_VALUE_CHANGED) {				// 角度改变事件，手触摸/拖动进度条
-    		angle = lv_arc_get_angle_end(obj);					// 获取事件对象改变的角度
-    	}
+    static void arc_event_handler(lv_event_t * e) {
+        lv_event_code_t code = lv_event_get_code(e);
+        lv_obj_t * obj = lv_event_get_target(e);
+    
+        if (code == LV_EVENT_CLICKED) {
+            printf("arc Clicked\n");
+        } else if (code == LV_EVENT_VALUE_CHANGED) { // 角度改变事件，手触摸/拖动进度条
+            angle = lv_arc_get_value(obj); // 获取事件对象改变的角度
+            printf("Angle: %d\n", angle); // 打印当前角度
+        }
     }
 ```
 
