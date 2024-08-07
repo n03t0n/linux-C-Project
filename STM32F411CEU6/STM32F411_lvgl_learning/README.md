@@ -53,6 +53,7 @@ lv_label_set_text(label01, "#0000ff Re-color# #ff00ff text# #ff0000 of a# label.
 ![图片](https://github.com/user-attachments/assets/7110fd2c-a598-409b-b9d0-b8169d837645)
 
 # 弧形滑块的创建
+>还能有样式的选择等，这里只做做基础的介绍
 ```C
     // 创建弧形滑块
     // 需要注意的是角度默认是向右为0度，顺时针增加。 但是lv_arc_set_rotation设置了之后就是相对于设置的角度了
