@@ -36,7 +36,7 @@ lv_label_set_text(label_bottom, "At Bottom Right");
 lv_obj_align(label_bottom, LV_ALIGN_CENTER, 0, 0);
 ```
 ![图片](https://github.com/user-attachments/assets/1231e2ab-679b-49ac-a5f2-a923f63a89d4)
-### 对齐中的中央对齐很对，常用函数为```lv_obj_center(lv_obj_t* obj);```ta会自动和ta继承的父类对齐 
+### 其中中央对齐很很多，常用函数为```lv_obj_center(lv_obj_t* obj);```ta会自动和ta继承的父类对齐 
 
 ## lv_label_set_long_mode(lv_obj_t * obj, lv_label_long_mode_t long_mode);
 >当文本过长时可以采用这个函数调整文本
