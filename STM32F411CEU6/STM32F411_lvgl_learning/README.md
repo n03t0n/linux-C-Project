@@ -52,6 +52,33 @@ lv_label_set_text(label01, "#0000ff Re-color# #ff00ff text# #ff0000 of a# label.
 ```
 ![图片](https://github.com/user-attachments/assets/7110fd2c-a598-409b-b9d0-b8169d837645)
 
+# 弧形滑块的创建
+```C
+    // 创建弧形滑块
+    // 需要注意的是角度默认是向右为0度，顺时针增加。 但是lv_arc_set_rotation设置了之后就是相对于设置的角度了
+    lv_obj_t * arc = lv_arc_create(lv_scr_act()); // 在当前屏幕创建弧形对象
+    lv_arc_set_rotation(arc, 150); // 设置弧形的起始角度
+    lv_arc_set_bg_angles(arc, 0, 240); // 设置背景弧形的角度
+    
+    lv_arc_set_range(arc, 0, 100); // 设置值的范围
+    lv_arc_set_value(arc, 20); // 设置初始值
+    
+    lv_obj_center(arc); // 将弧形对象居中
+    lv_obj_set_size(arc, 100, 100); // 设置弧形滑块的宽度和高度
 
+    lv_obj_set_event_cb(arc, arc_event_handler); // 注册回调函数，常用的事件类型一般是值的变化和点击
+```
+```C
+    // 回调函数
+    static void arc_event_handler(lv_obj_t * obj, lv_event_t event)
+    {
+    	if (event == LV_EVENT_CLICKED) {
+    		printf("arc Clicked\n");
+    	}
+    	else if (event == LV_EVENT_VALUE_CHANGED) {				// 角度改变事件，手触摸/拖动进度条
+    		angle = lv_arc_get_angle_end(obj);					// 获取事件对象改变的角度
+    	}
+    }
+```
 
 
