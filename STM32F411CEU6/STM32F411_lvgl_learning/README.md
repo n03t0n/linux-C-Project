@@ -15,7 +15,7 @@ lv_label_set_text(text, "Hello, world!");
 
 ![图片](https://github.com/user-attachments/assets/562e1faa-33d5-41ea-9e29-eefc230869e7)
 
-## void lv_obj_align(lv_obj_t* obj, lv_align_t align, lv_coord_t x_ofs, lv_coord_t y_ofs); 
+## lv_obj_align(lv_obj_t* obj, lv_align_t align, lv_coord_t x_ofs, lv_coord_t y_ofs); 
 >控件对齐设置，相对于的是父类的对齐
 >参数中的x，y的偏移是相对于参数```lv_align_t align```的
 >```lv_align_t align```有多种选择
@@ -36,4 +36,21 @@ lv_label_set_text(label_bottom, "At Bottom Right");
 lv_obj_align(label_bottom, LV_ALIGN_CENTER, 0, 0);
 ```
 ![图片](https://github.com/user-attachments/assets/1231e2ab-679b-49ac-a5f2-a923f63a89d4)
+### 对齐中的中央对齐很对，常用函数为```lv_obj_center(lv_obj_t* obj);```ta会自动和ta继承的父类对齐 
+
+## lv_label_set_long_mode(lv_obj_t * obj, lv_label_long_mode_t long_mode);
+>当文本过长时可以采用这个函数调整文本
+>一共有5种模式
+![图片](https://github.com/user-attachments/assets/97afe5ff-6901-4955-98a9-3f0a95e6f740)
+
+## lv_label_set_recolor(lv_obj_t * obj, true);
+>开启文本颜色设置
+>设置文本颜色的格式如下
+```C
+lv_label_set_text(label01, "#0000ff Re-color# #ff00ff text# #ff0000 of a# label.");
+```
+![图片](https://github.com/user-attachments/assets/7110fd2c-a598-409b-b9d0-b8169d837645)
+
+
+
 
