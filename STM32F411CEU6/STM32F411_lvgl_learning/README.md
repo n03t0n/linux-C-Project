@@ -85,4 +85,14 @@ lv_label_set_text(label01, "#0000ff Re-color# #ff00ff text# #ff0000 of a# label.
     }
 ```
 
+## lvgl字体大小选择以及特殊符号等
+首先是字体是否被启用 
+![QQ_1723114654199](https://github.com/user-attachments/assets/692a7516-9f8c-4213-b0e9-c65ff5950390) 
+然后是这两行选择启用字体中的那一个  
+![QQ_1723114751404](https://github.com/user-attachments/assets/9a7adefc-9090-4b55-8636-3cb6a86989c4) 
+特殊符号本质是就是变成宏定义的字符串，和文本用法一样。下表是常用字符串
+![QQ_1723115409260](https://github.com/user-attachments/assets/5c8ac3f6-5292-4a94-b2e0-b164956cab34)
+
+
+
 
