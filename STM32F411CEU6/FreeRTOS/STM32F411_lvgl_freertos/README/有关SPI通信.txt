@@ -1,0 +1,4 @@
+使用SPI-1
+官方TFT库在core/src里的GUI和TFTLCD内
+调用接口写在spi.h里面
+spi时钟极性为CPOL=1，CPHA=1 （MX中即是第二边沿触发，sclk空闲时为高电平）
